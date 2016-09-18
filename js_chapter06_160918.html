@@ -293,7 +293,7 @@
 
             this.getWidth = function(){ return width; };
             this.getHeight = function(){ return height; };
-            
+
             this.setWidth = function(value){
                 if(value < 0)
                 {
@@ -303,7 +303,7 @@
                 {
                     width = value;
                 }
-                
+
             };
 
             this.setHeight = function(value){
@@ -317,8 +317,8 @@
                 }
 
             };
-        }   
-    
+        }
+
         Rectangle.prototype.getArea = function(){
             return this.getWidth() * this.getHeight();
         };
@@ -368,7 +368,7 @@
         });
 
         alert(object.name);
-        
+
         object.name = 'OTHER';
         for(var i in object){
             alert(i + ' : ' + object[i]);
@@ -435,8 +435,9 @@
         alert(person.name + ' : ' + person.gender);
         */
 
-        //6-48, 6-49 
+        //6-48, 6-49
         //--> don't understand
+        /*
         var object = {};
 
         object.gender = 'Male';
@@ -454,6 +455,59 @@
         Object.defineProperty(object, 'showMeTheMoney', {
             value: true
         });
+        */
+
+        //6-50
+        /*
+        var person = {
+            name: 'Jerry',
+            gender: 'Male',
+            region: 'Seoul, Korea',
+            hobby: 'bowling'
+        };
+
+        //Object.seal(person);
+        Object.freeze(person);
+        delete person.name;
+
+        alert(person.name);
+        person.name = "Tom";
+        alert(person.name);
+        alert(Object.isSealed(person));
+        */
+
+        //6-51
+        /*
+        var object = { name: 'Jerry' };
+
+        Object.defineProperty(object, 'gender', {
+            value: 'Male'
+        });
+
+        alert(Object.keys(object));
+        alert(Object.getOwnPropertyNames(object));
+        */
+
+        //6-52
+        /*
+        var object = { name: 'Jerry' };
+        Object.defineProperty(object, 'gender', { value: 'Male'});
+
+        var descriptors = [];
+        descriptors.push(Object.getOwnPropertyDescriptor(object, 'name'));
+        descriptors.push(Object.getOwnPropertyDescriptor(object, 'gender'));
+
+        var output = '';
+        for(var i in descriptors){
+            var item = descriptors[i];
+            for(var key in item){
+                output += key + ' : ' + item[key] + '\n';
+            }
+            output += '------------------------\n'
+        }
+
+        alert(output);
+        */
     </script>
 </head>
 <body>
