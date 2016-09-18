@@ -285,8 +285,8 @@
         alert('Area: ' + rectangle.getArea());
         */
 
-        //6-34, 6-35, 6-36, 6-37
-        
+        //6-34, 6-35, 6-36, 6-37, 6-38, 6-39
+        /*
         function Rectangle(w,h){
             var width = w;
             var height = h;
@@ -343,6 +343,20 @@
 
         alert(rectangle.getArea() + ' : ' + square.getArea());
         alert(square instanceof Rectangle);
+        */
+
+        //6-40
+        /*
+        function Square(length){
+            Rectangle.call(this, length, length);
+        }
+
+        Square.prototype = new Rectangle();
+        Square.prototype.constructor = Square;
+
+        var square = new Square(5);
+        alert(square.getArea());
+        */
     </script>
 </head>
 <body>
