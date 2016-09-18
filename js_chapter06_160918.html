@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //6-1, 6-2, 6-3, 6-4, 6-5, 6-6, 6-7
+        /*
+        var array = ['사과', '바나나', '망고', '딸기'];
+
+        var product = {
+            제품명: '7D 건조 망고',
+            유형: '당절임',
+            성분: '망고, 설탕, 메타중아황산나트륨, 치자황색소',
+            원산지: '필리핀'
+        };
+
+        var object = {
+            'withMe': ' 휘성',
+            'with space': 273,
+            'with ~!@##$!$':52
+        };
+
+        var object = {
+            number: 273,
+            string: 'Jerry',
+            boolean: true,
+            array: [0, 1, 2, 3],
+            method: function () {}
+        };
+
+        var person = {
+            name: 'jerry',
+            eat: function (food) {
+                alert(this.name + '은/는 ' + food + '을/를 먹습니다.')
+            }
+        };
+
+        var output = '';
+        for (var key in product) {
+            output += '*' + key + ': ' + product[key] + '\n';  // product.key는 요소를 못 가져옴
+        }
+
+        alert(output);
+        //person.eat('밥');
+        //alert(array[2]);
+        alert(product.유형);
+        alert(product['유형']);
+        //alert(object['withMe']);
+        //alert(object[withMe]);
+        */
+
+        //6-8, 6-9, 6-10, 6-11, 참고
+        /*
+        var output = '';
+        var result = '';
+        var result2 = '';
+
+        var student = {
+            이름: '장진형',
+            국어: 90,
+            수학: 100,
+            영어: 100,
+            과학: 95,
+            result2: '이미지있느냐?'
+        };
+
+        output += "'이름' in student: " + ('이름' in student) + '\n';
+        output += "'이름' in student: " + ('성별' in student) + '\n';
+
+        result += '이름: ' + student.이름 + '\n';
+        result += '국어: ' + student.국어 + '\n';
+        result += '영어: ' + student.영어 + '\n';
+        result += '수학: ' + student.수학 + '\n';
+        result += '과학: ' + student.과학 + '\n';
+        result += '총점: ' + (student.국어 + student.영어 + student.수학 + student.과학);
+
+        with (student) {
+            window.result2 += '이름: ' + 이름 + '\n';
+            window.result2 += '국어: ' + 국어 + '\n';
+            window.result2 += '영어: ' + 영어 + '\n';
+            window.result2 += '수학: ' + 수학 + '\n';
+            window.result2 += '과학: ' + 과학 + '\n';
+            window.result2 += '총점: ' + (국어 + 영어 + 수학 + 과학);
+        }
+
+        alert(output);
+        alert(result);
+        alert(result2);
+        */
+
+        //6-12, 6-13
+        /*
+        var student = {};
+
+        student.이름 = '장진형';
+        student.취미 = '독서';
+        student.특기 = '볼링';
+        student.장래희망 = '부자';
+
+        student.toString = function () {
+
+            var output = '';
+            for (var key in this) {
+                if (key != 'toString') {
+                    output += key + '\t' + this[key] + '\n';
+                }
+            }
+            return output;
+        }
+
+        //alert(student);
+        alert(student.toLocaleString());
+        delete (student.특기);
+        alert(student.toLocaleString());
+        */
+
+        //6-16, 6-17, 6-18, 6-19
+        /*
+        var student0 = { 이름: '장진형', 나이: 33 };
+        var student1 = { 이름: '보아', 나이: 31 };
+        var student2 = { 이름: '서현진', 나이: 32 };
+
+        var students = [];
+        students.push({ 이름: '장진형', 나이: 33 });
+        students.push({ 이름: '보아', 나이: 31 });
+        students.push({ 이름: '서현진', 나이: 32 });
+
+        for (var i in students) {
+            students[i].getAge = function () {
+                return this.나이;
+            };
+            students[i].getAdd = function () {
+                return this.getAge() + 20;
+            };
+        };
+
+        var output = '이름\t나이\n';
+        for (var i in students) {
+            with (students[i]) {
+                output += 이름 + '\t' + getAge() + '\t' + getAdd() + '\n';
+            }
+        };
+
+        alert(output);
+        */
+
+        //6-20, 6-21, 6-22, 6-23
+        /*
+        var person = [];
+
+        person.push({
+            이름: '장진형',
+            나이: 33,
+            취미: '독서',
+            특기: '볼링'
+        });
+
+        person.push({
+            이름: '서현진',
+            나이: 32,
+            특이사항: '전직 아이돌',
+            결혼여부 : '미혼'
+        });
+
+        function makePerson(name, age, hobby, specialty) {
+            var willReturn = {
+                이름: name,
+                나이: age,
+                취미: hobby,
+                특기: specialty,
+
+                getAge: function () {
+                    return this.age;
+                },
+
+                toString: function () {
+                    return this.이름 + '\t' + this.나이 + '\t' + this.취미 + '\t' + this.특기;
+                }
+            };
+            return willReturn;
+        }
+
+        var people = [];
+        people.push(makePerson('장진형', 33, '독서', '볼링'));
+        people.push(makePerson('서현진', 32));
+
+        var output = '이름\t나이\t취미\t특기\n';
+        for (var i in people) {
+            output += people[i].toString() + '\n';
+        };
+
+        alert(output);
+        */
+
+        //6-24, 6-25, 6-26, 6-27
+        /*
+        function Student(name, korean, math, english, science) {
+            this.이름 = name;
+            this.국어 = korean;
+            this.수학 = math;
+            this.영어 = english;
+            this.과학 = science;
+
+            this.getSum = function () {
+                return this.국어 + this.수학 + this.영어 + this.과학;
+            };
+
+            this.getAverage = function () {
+                return this.getSum() / 4;
+            };
+
+            this.toString = function () {
+                return this.이름 + '\t' + this.getSum() + '\t' + this.getAverage();
+            };
+        }
+
+        var student = new Student('장진형', 100, 90, 95, 100);
+
+
+        var output = '이름\t국어\t영어\t수학\t과학\n';
+        for (var key in student) {
+            //output += this[key] + '\n';
+            output += student[key] + '\n';
+        };
+
+        alert(output);
+        */
+        //6-28
+        /*
+        function Student(name, koream, math, english, science){
+            this.이름 = name;
+            this.국어 = korean;
+            this.수학 = math;
+            this.영어 = english;
+            this.과학 = science;
+        }
+
+        Student.prototype.getSum = function(){};
+        Student.prototype.getAverage = function(){};
+        Student.prototype.toString = function(){};
+        */
+
+        //6-29
+        /*
+        function Student(name){
+            this.name = name;
+        }
+
+        var student = new Student('장진형');
+
+        alert(student instanceof Student);
+        alert(student instanceof Number);
+        alert(student instanceof String);
+        alert(student instanceof Boolean);
+        */
+
+        //6-30, 6-31
+        /*
+        function Constructor(value){
+            this.value = value;
+        }
+
+        //var constructor = new Constructor('Hello');
+        var constructor = Constructor('Hello');
+
+        //alert(constructor.value);
+        alert(value);
+        */
+
+        //6-32, 6-33
+        /*
+        function Rectangle(width, height){
+            this.width = width;
+            this.height = height;
+        }
+
+        Rectangle.prototype.getArea = function(){
+            return this.width * this.height;
+        };
+
+        var rectangle =  new Rectangle(5,7);
+        rectangle.width = -2;
+        alert('Area: ' + rectangle.getArea());
+        */
+
+        //6-34, 6-35, 6-36, 6-37
+        
+        function Rectangle(w,h){
+            var width = w;
+            var height = h;
+
+            this.getWidth = function(){ return width; };
+            this.getHeight = function(){ return height; };
+            
+            this.setWidth = function(value){
+                if(value < 0)
+                {
+                    throw '똑바로 입력해라!';
+                }
+                else
+                {
+                    width = value;
+                }
+                
+            };
+
+            this.setHeight = function(value){
+                if(value < 0)
+                {
+                    throw '똑바로 입력해라!';
+                }
+                else
+                {
+                    height = value;
+                }
+
+            };
+        }   
+    
+        Rectangle.prototype.getArea = function(){
+            return this.getWidth() * this.getHeight();
+        };
+
+        //var rectangle =  new Rectangle(5,7);
+        //rectangle.setWidth(-2);
+        //alert('Area: ' + rectangle.getArea());
+
+        function Square(length){
+            //this.width = length;
+            //this.height = length;
+            this.base = Rectangle;
+            this.base(length, length);
+        }
+
+        //Square.prototype.getArea = function(){return this.getWidth * this.getHeight;};
+
+        Square.prototype = Rectangle.prototype;
+
+        var rectangle = new Rectangle(5,7);
+        var square = new Square(5);
+
+        alert(rectangle.getArea() + ' : ' + square.getArea());
+        alert(square instanceof Rectangle);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
