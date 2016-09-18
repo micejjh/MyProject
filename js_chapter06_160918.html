@@ -357,6 +357,103 @@
         var square = new Square(5);
         alert(square.getArea());
         */
+
+        //6-41, 6-42
+        /*
+        var object = {};
+        Object.defineProperty(object, 'name', {
+            value : 'Jerry',
+            writeable : false,
+            enumerable : false
+        });
+
+        alert(object.name);
+        
+        object.name = 'OTHER';
+        for(var i in object){
+            alert(i + ' : ' + object[i]);
+        }
+
+        alert(object.name);
+        */
+
+        //6-43, 6-44
+        /*
+        var object = {};
+        var value = 'Jerry';
+        Object.defineProperty(object, 'name',{
+            get: function(){
+                alert('GETTER..!!');
+                return value;
+            },
+            set: function(newValue){
+                alert('SETTER : ' + newValue);
+                value = newValue;
+            },
+            configurable: false
+        });
+
+        Object.defineProperty(object, 'name', {
+            enumerable: true
+        });
+        //alert(object.name);
+
+        //object.name = 'TOM';
+        //alert(object.name);
+        */
+
+        //6-45
+        /*
+        var object = {};
+        Object.defineProperties(object, {
+            name : {
+                value : 'Jerry'
+            },
+            gender : {
+                value : 'Male'
+            }
+        });
+        */
+
+        //6-46, 6-47
+        /*
+        var object = Object.create({},{
+            name: { value: 'Jerry', enumerable: true },
+            gender: { value: 'Male', enumerable: true }
+        });
+
+        alert(typeof(object));
+
+        var person = Object.create(object, {
+            region: { value: 'Seoul, Korea', enumerable:true },
+            hobby: { value: 'bowling', enumerable:true }
+        });
+
+        //alert(Object.keys(object));
+        alert(Object.getOwnPropertyNames(person) + '\n' + Object.keys(person));
+
+        alert(person.name + ' : ' + person.gender);
+        */
+
+        //6-48, 6-49 
+        //--> don't understand
+        var object = {};
+
+        object.gender = 'Male';
+
+        Object.defineProperty(object, 'name', {
+            value: 'Jerry',
+            writeable: true
+        });
+
+        alert(Object.isExtensible(object));
+        Object.preventExtensions(object);
+        alert(Object.isExtensible(object));
+
+        object.dream = "coding";
+        Object.defineProperty(object, 'showMeTheMoney', {
+            value: true
+        });
     </script>
 </head>
 <body>
