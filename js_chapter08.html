@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+    // 8-1
+    /*
+    var output = '';
+    for(var key in window){
+        output += '#' + key + ': ' + window[key] + '\n';
+    }
+    alert(output);
+    */
+
+    //8-2, 8-3
+    //window.open('http://www.naver.com', 'GGGGGGGGGGGG', 'width=600, height=300', true);
+
+    //8-4
+    /*
+    var child = window.open('', '', 'width=300, height=300');
+    child.document.write('<h1>hahaha</h1>')
+    */
+
+    //8-5
+    /*
+    window.onload = function(){
+        alert('3초 후 이 페이지는 종료됨!!');
+        window.setTimeout(function(){
+            window.close();
+        }, 3000);
+    }
+    */
+
+    //8-6
+    /*
+    window.onload = function(){
+        var internalID = setInterval(function(){
+            document.body.innerHTML += '<p>' + new Date() + '</p>';
+        },2000);
+
+        setTimeout(function(){
+            alert(internalID);
+            clearInterval(internalID);
+            alert(internalID);
+        },10000);
+    }*/
+
+    //8-7
+    /*
+    var child = window.open('','','width=300, height=300');
+
+    child.moveTo(0,0);
+
+    setInterval(function(){
+        child.moveTo(10,10);
+    },1000);
+    */
+
+    //8-8
+    /*
+    var output = '';
+    for(var key in screen){
+        output += '#' + key + ': ' + screen[key] + '\n';
+    }
+    alert(output);
+    */
+
+    //8-9
+    /*
+    var child = window.open('', '', 'width=300, height=300');
+    var width = screen.width;
+    var height = screen.height;
+
+    child.moveTo(0,0);
+    child.resizeTo(width,height);
+
+    setInterval(function(){
+        child.resizeBy(-20,-20);
+        child.moveBy(10,10);
+    },2000);
+    */
+
+    //8-10
+    /*
+    var output = '';
+    for(var key in location){
+        output += '#' + key + ': ' + location[key] + '\n';
+    }
+    alert(output);
+    */
+
+    //8-11
+    /*
+    var output = '';
+    for(var key in navigator){
+        output += '#' + key + ': ' + navigator[key] + '\n';
+    }
+    alert(output);
+    */
+
+    //8-12, 8-13, 8-14, 8-15
+    //alert('Hello Window .. !');
+    window.onload = function(){
+        alert('Hello Window .. !');
+    }
+
+    </script>
+</head>
+<body>
+    <h1>Hello Window!!</h1>
+    <h1>Hello Window!!</h1>
+</body>
+</html>
